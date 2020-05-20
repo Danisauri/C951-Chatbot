@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>HI</pattern>
+        <template><srai>hello</srai></template>
+    </category>
+    <category>
+        <pattern>HEY</pattern>
+        <template><srai>hello</srai></template>
+    </category>
+    <category>
+        <pattern>HI *</pattern>
+        <template><srai>hello</srai></template>
+    </category>
+    <category>
+        <pattern>HEY *</pattern>
+        <template><srai>hello</srai></template>
+    </category>
+    <category>
+        <pattern>HELLO *</pattern>
+        <template><srai>hello</srai></template>
+    </category>
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hi! My name is <formal><bot name="name" /></formal> :) <br /> 
+        I can help you identifying jobs in computing fields for which you may qualify! 
+        <delay>2</delay>
+        You can always restart by writing "Restart" ;)
+        <delay>1</delay>
+        Now, could you tell me your name?
+         <learn>
+            <category>
+            <pattern>*</pattern>
+            <template>Nice to meet you <formal><set name = "username"><star index = "1"/></set></formal>!
+            <srai>options</srai>
+            </template>
+            </category>
+        </learn>
+        </template>
+    </category>
+    <category>
+        <pattern>options</pattern>
+        <template>
+            <delay>1</delay>
+            I could show you info about different paths, or I could walk 
+            you through to pick one together
+            <delay>3</delay>
+            What do you prefer, <formal><get name = "username"></get></formal>?
+            <button><text>Hardware Engineer</text>
+                <postback>Hardware Engineer</postback>
+            </button>
+            <button><text>Software Developer</text>
+                <postback>Software Developer</postback>
+            </button>
+            <button><text>Web Developer</text>
+                <postback>Web Developer</postback>
+            </button>
+            <button><text>Security Analyst</text>
+                <postback>Security Analyst</postback>
+            </button>
+            <button><text>Data Scientist</text>
+                <postback>Data Scientist</postback>
+            </button>
+            <button><text>Walkme through</text>
+                <postback>Walkme through</postback>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>Hardware Engineer</pattern>
+        <template>
+            Computer hardware engineers design and supervise the manufacture 
+            and installation of computer systems and related products. 
+            <delay>5</delay>
+            They often spend considerable time solving problems, guiding 
+            installation, and conducting computer product testing.
+            <delay>5</delay>
+            You may find more information here: 
+            <link>
+                <text>Hardware Engineer</text>
+                <url>https://www.computerscience.org/careers/computer-hardware-engineer/</url>
+            </link>
+            <srai>finishing</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>Software Developer</pattern>
+        <template>
+            Software developers conceive of, design, and build computer 
+            programs. Some develop new applications for mobile or desktop use, 
+            while others build underlying operating systems. Either way, 
+            software developers identify user needs, build programs, test out 
+            new software, and make improvements. 
+            <delay>5</delay>
+            Working closely with computer programmers, software developers fill 
+            roles in the computer systems, manufacturing, finance, and software 
+            publishing industries.
+            <delay>5</delay>
+            You may find more information here: 
+            <link>
+                <text>Software Developer</text>
+                <url>https://www.computerscience.org/careers/software-developer/</url>
+            </link>
+            <srai>finishing</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>Web Developer</pattern>
+        <template>
+            Web developers work independently as freelancers or with company 
+            teams to create websites. Depending on the job, these professionals 
+            may focus on front-end development, which involves designing sites 
+            and producing content, or back-end development, which involves 
+            writing code to make website features work.
+            <delay>5</delay>
+            Web developers may also become webmasters for a site, providing 
+            maintenance, updates, and troubleshooting when needed
+            <delay>5</delay>
+            You may find more information here: 
+            <link>
+                <text>Web Developer</text>
+                <url>https://www.computerscience.org/careers/web-developer/</url>
+            </link>
+            <srai>finishing</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>Security Analyst</pattern>
+        <template>
+            You may be wondering: What is information security analysis? It is 
+            an incredibly important field in today's business environment, since 
+            most organizations rely heavily on information systems in their 
+            daily work. Information security analysts work to secure information 
+            networks and systems in many different types of organizations
+            <delay>5</delay>
+            They protect computer networks by monitoring for and responding to threats.
+            <delay>5</delay>
+            You may find more information here: 
+            <link>
+                <text>Security Analyst</text>
+                <url>https://www.computerscience.org/careers/information-security-analyst/</url>
+            </link>
+            <srai>finishing</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>Data Scientist</pattern>
+        <template>
+            "Data science" may describe a diverse array of fields and positions, 
+            but generally, data scientists work in teams or independently to 
+            analyze data and address targeted problems. After collecting and 
+            cleaning data, these professionals use programming languages and 
+            software tools such as Tableau to visualize data, identify 
+            meaningful patterns, and generate algorithms and experiments.
+            <delay>5</delay>
+            Data scientists also present their findings and propose 
+            organizational solutions. If you have an appetite for 
+            problem-solving and aptitude in quantitative fields such as computer 
+            science, information technology (IT), and advanced math (e.g. 
+            statistics), consider a career as a data scientist.
+            <delay>5</delay>
+            You may find more information here: 
+            <link>
+                <text>Data Scientist</text>
+                <url>https://www.computerscience.org/careers/data-science/</url>
+            </link>
+            <srai>finishing</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>walkme through</pattern>
+        <template>
+            Perfect!
+            <delay>2</delay>
+            How do you feel about Theorical computer science vs something more 
+            concrete? Which one do you prefer?
+                <reply>
+                    <text>Theorical</text>
+                    <postback>Theorical</postback>
+                </reply>
+                <reply>
+                    <text>Concrete</text>
+                    <postback>concrete</postback>
+                </reply>
+        </template>
+    </category>
+    <category>
+        <pattern>Theorical</pattern>
+        <template>
+            Do you like to find patrons and analize given data or would
+            you prefer to dive into code in a more straight forward way?
+            <reply><text>Analyze</text>
+                <postback>analyze</postback>
+            </reply>
+            <reply><text>Code</text>
+                <postback>code</postback>
+            </reply>
+        </template>
+    </category>
+    <category>
+        <pattern>analyze</pattern>
+        <template>
+            You should invistigate about careers in Data Science!
+            <delay>3</delay>
+            <srai>Data Scientist</srai></template>
+    </category>
+    <category>
+        <pattern>code</pattern>
+        <template>
+            You should invistigate about careers in Software Development!
+            <delay>3</delay>
+            <srai>Software Developer</srai></template>
+    </category>
+    <category>
+        <pattern>concrete</pattern>
+        <template>
+            If you were building a house, would you prefer to work in the 
+            construction or the design?
+            <reply><text>Construction</text>
+                <postback>Construction</postback>
+            </reply>
+            <reply><text>Design</text>
+                <postback>Design</postback>
+            </reply>
+        </template>
+    </category>
+    <category>
+        <pattern>Construction</pattern>
+        <template>
+            You should invistigate about careers in Hardware Engineering!
+            <delay>3</delay>
+            <srai>Hardware Engineer</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>Design</pattern>
+        <template>
+            Do you prefer to look after the aestethic of things or you prefer to
+            make them secure?
+            <reply><text>Aestethic</text>
+                <postback>Aestethic</postback>
+            </reply>
+            <reply><text>Security</text>
+                <postback>Security</postback>
+            </reply>
+        </template>
+    </category>
+    <category>
+        <pattern>Aestethic</pattern>
+        <template>
+            You should invistigate about careers in Web Development!
+            <delay>3</delay>
+            <srai>Web Developer</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>Security</pattern>
+        <template>
+            You should invistigate about careers in Security Analysis!
+            <delay>3</delay>
+            <srai>Security Analyst</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>RESTART</pattern>
+        <template>Restart it is! <delay>1</delay><srai>hello</srai></template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>What was that?</li>
+                <li>I don’t understand</li>
+                <li>Can you say that more clearly?</li>
+            </random>
+        </template>
+    </category>
+    <category>
+        <pattern>finishing</pattern>
+        <template>
+            <delay>2</delay>
+            Is this information enough or you want to check other paths?
+            <button><text>I'm ready, thanks!</text>
+                <postback>exit</postback>
+            </button>
+            <button><text>I want to keep looking</text>
+                <postback>options</postback>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>Exit</pattern>
+        <template>Awesome! see you next time!</template>
+    </category>
+    <category>
+        <pattern>* bye</pattern>
+        <template><srai>Exit</srai></template>
+    </category>
+    <category>
+        <pattern>bye</pattern>
+        <template><srai>Exit</srai></template>
+    </category>
+</aiml>
